@@ -11,7 +11,6 @@ const dirs = [
   "iconoir",
   "majesticons",
   "lucide",
-  "line-md",
 ];
 const baseDir = Deno.realPathSync("svg");
 for (const dir of dirs) {
