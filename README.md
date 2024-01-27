@@ -2,11 +2,11 @@
 
 [An icon plotting game to connect dots](https://marmooo.github.io/plot-icon/).
 
-## Build
+## Installation
 
-```
-bash build.sh
-```
+1. `gitn clone vendor/ repos.lst` (see [gitn](https://github.com/marmooo/gitn))
+2. `bash build-svg.sh`
+3. `deno run --allow-read --allow-write listup.js`
 
 ## Attribution
 
