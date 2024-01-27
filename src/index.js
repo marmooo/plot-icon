@@ -128,7 +128,7 @@ function handleTextClick(event, text, pathIndex) {
     return;
   }
   const currPath = problem[pathIndex].path;
-  if (textIndex != 0) currPath.nextElementSibling.remove();
+  if (connectCount != 0) currPath.nextElementSibling.remove();
   // text.style.cursor = "initial";
   // text.setAttribute("fill-opacity", 0.5);
   // text.onmouseenter = null;
@@ -140,60 +140,59 @@ function handleTextClick(event, text, pathIndex) {
   const data = problem[pathIndex];
   const pathData = data.pathData;
 
+  dotRoutes.forEach((routes, i) => {
+    const posFrom = dotIndexes[i];
+    routes.forEach((posTo) => {
+      const rectsFrom = data.rects[posFrom];
+      const rectsTo = data.rects[posTo];
+      let pos = Math.max(rectsFrom.i, rectsTo.i);
+      if (rectsFrom.z) {
+        const x = (rectsFrom.left + rectsFrom.right) / 2;
+        const y = (rectsFrom.top + rectsFrom.bottom) / 2;
+        pathData.segments[pos] = ["L", x, y];
+      } else if (rectsTo.z) {
+        const x = (rectsTo.left + rectsTo.right) / 2;
+        const y = (rectsTo.top + rectsTo.bottom) / 2;
+        pathData.segments[pos] = ["L", x, y];
+      } else {
+        pathData.segments[pos] = data.d.segments[pos];
+      }
+      data.drawn[pos] = true;
+      connectCount += 1;
+      while (isSamePosition(data.rects[pos], data.rects[pos + 1])) {
+        data.drawn[pos + 1] = true;
+        connectCount += 1;
+        pos += 1;
+      }
+    });
+  });
   if (data.drawn.every((status) => status)) {
     path.setAttribute("d", pathData.toString());
     currPath.after(path);
-
     problem[pathIndex].dots.forEach((prevText) => {
       prevText.remove();
     });
+    pad.clear();
+    dotIndexes = [];
     if (pathIndex + 1 == problem.length) {
       playAudio("correctAll");
     } else {
       playAudio("correct2");
       currPathIndex += 1;
-      textIndex = 0;
       problem[currPathIndex].dots.forEach((currDot) => {
         currDot.style.display = "initial";
       });
     }
   } else {
-    dotRoutes.forEach((routes, i) => {
-      const posFrom = dotIndexes[i];
-      routes.forEach((posTo) => {
-        const rectsFrom = data.rects[posFrom];
-        const rectsTo = data.rects[posTo];
-        let segmentPos = Math.max(rectsFrom.i, rectsTo.i);
-        if (rectsFrom.z) {
-          const x = (rectsFrom.left + rectsFrom.right) / 2;
-          const y = (rectsFrom.top + rectsFrom.bottom) / 2;
-          pathData.segments[segmentPos] = ["L", x, y];
-        } else if (rectsTo.z) {
-          const x = (rectsTo.left + rectsTo.right) / 2;
-          const y = (rectsTo.top + rectsTo.bottom) / 2;
-          pathData.segments[segmentPos] = ["L", x, y];
-        } else {
-          pathData.segments[segmentPos] = data.d.segments[segmentPos];
-        }
-        data.drawn[segmentPos] = true;
-        while (
-          isSamePosition(data.rects[segmentPos], data.rects[segmentPos + 1])
-        ) {
-          data.drawn[segmentPos + 1] = true;
-          segmentPos += 1;
-        }
-      });
-    });
     const newPathData = new svgpath.from(data.pathData);
     path.setAttribute("d", newPathData.toString());
     path.setAttribute("fill", "none");
     path.setAttribute("stroke", "gray");
     currPath.after(path);
     pad.clear();
+    dotIndexes = indexes;
     playAudio("correct1");
-    textIndex += 1;
   }
-  dotIndexes = indexes;
 }
 
 function addNumber(x, y, r, z, pathIndex, display) {
@@ -352,7 +351,6 @@ function getRects(points, r, skipThreshold) {
     //   reduced += 1;
     // }
   });
-  console.log(rects);
   return rects;
 }
 
@@ -679,7 +677,7 @@ function styleAttributeToAttributes(svg) {
 }
 
 async function nextProblem() {
-  textIndex = 0;
+  connectCount = 0;
   currPathIndex = 0;
   const courseNode = document.getElementById("course");
   const course = courseNode.options[courseNode.selectedIndex].value;
@@ -758,7 +756,7 @@ const svgNamespace = "http://www.w3.org/2000/svg";
 const xlinkNamespace = "http://www.w3.org/1999/xlink";
 const skipFactor = 0.05;
 let dotIndexes = [];
-let textIndex = 0;
+let connectCount = 0;
 let currPathIndex = 0;
 let svg;
 let problem;
