@@ -178,6 +178,7 @@ function handleTextClick(event, text, pathIndex) {
       playAudio("correctAll");
     } else {
       playAudio("correct2");
+      connectCount = 0;
       currPathIndex += 1;
       problem[currPathIndex].dots.forEach((currDot) => {
         currDot.style.display = "initial";
