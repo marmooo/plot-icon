@@ -104,7 +104,7 @@ function isSamePosition(rect1, rect2) {
   }
 }
 
-function handleTextClick(event, text, pathIndex) {
+function handleTextClick(event, viewBox, pathIndex) {
   if (!pad._drawingStroke) return;
   const { clientX, clientY } = event;
   const targets = document.elementsFromPoint(clientX, clientY)
@@ -189,6 +189,8 @@ function handleTextClick(event, text, pathIndex) {
     path.setAttribute("d", newPathData.toString());
     path.setAttribute("fill", "none");
     path.setAttribute("stroke", "gray");
+    const strokeWidth = viewBox[3] / svg.clientWidth * 2;
+    path.setAttribute("stroke-width", strokeWidth);
     currPath.after(path);
     pad.clear();
     dotIndexes = indexes;
@@ -196,7 +198,7 @@ function handleTextClick(event, text, pathIndex) {
   }
 }
 
-function addNumber(x, y, r, z, pathIndex, display) {
+function addNumber(x, y, r, z, pathIndex, display, viewBox) {
   const text = document.createElementNS(svgNamespace, "circle");
   text.setAttribute("cx", x + r);
   text.setAttribute("cy", y + r);
@@ -206,7 +208,7 @@ function addNumber(x, y, r, z, pathIndex, display) {
   text.style.display = display;
   text.style.cursor = "pointer";
   text.textContent = Math.random();
-  text.onmouseenter = (event) => handleTextClick(event, text, pathIndex);
+  text.onmouseenter = (event) => handleTextClick(event, viewBox, pathIndex);
   text.onmousedown = (event) => {
     pad._strokeBegin(event);
     handleTextClick(event, text, pathIndex);
@@ -386,6 +388,7 @@ function addDots(r) {
         rect.z,
         pathIndex,
         display,
+        viewBox,
       );
       dots.push(text);
       index += 1;
@@ -533,7 +536,7 @@ async function fetchIconList(course) {
 }
 
 async function fetchIcon(url) {
-  url = "/svg/phosphor-icons/regular/door.svg";
+  // url = "/svg/phosphor-icons/regular/door.svg";
   const response = await fetch(url);
   const svg = await response.text();
   return new DOMParser().parseFromString(svg, "image/svg+xml");
