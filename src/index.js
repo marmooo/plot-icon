@@ -97,7 +97,7 @@ function getConnectableIndex(prevIndex, dot, pathIndex) {
 
 function isSamePosition(rect1, rect2) {
   if (!rect1 || !rect2) return false;
-  if (rect1.left == rect2.left && rect1.top && rect2.top) {
+  if (rect1.left == rect2.left && rect1.top == rect2.top) {
     return true;
   } else {
     return false;
