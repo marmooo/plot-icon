@@ -146,11 +146,11 @@ function handleTextClick(event, viewBox, pathIndex) {
       const rectsFrom = data.rects[posFrom];
       const rectsTo = data.rects[posTo];
       let pos = Math.max(rectsFrom.i, rectsTo.i);
-      if (rectsFrom.z) {
+      if (rectsFrom.z != null) {
         const x = (rectsFrom.left + rectsFrom.right) / 2;
         const y = (rectsFrom.top + rectsFrom.bottom) / 2;
         pathData.segments[pos] = ["L", x, y];
-      } else if (rectsTo.z) {
+      } else if (rectsTo.z != null) {
         const x = (rectsTo.left + rectsTo.right) / 2;
         const y = (rectsTo.top + rectsTo.bottom) / 2;
         pathData.segments[pos] = ["L", x, y];
@@ -185,7 +185,7 @@ function handleTextClick(event, viewBox, pathIndex) {
       });
     }
   } else {
-    const newPathData = new svgpath.from(data.pathData);
+    const newPathData = new svgpath.from(pathData);
     path.setAttribute("d", newPathData.toString());
     path.setAttribute("fill", "none");
     path.setAttribute("stroke", "gray");
@@ -537,6 +537,7 @@ async function fetchIconList(course) {
 
 async function fetchIcon(url) {
   // url = "/svg/phosphor-icons/regular/door.svg";
+  url = "/svg/tabler-icons/arrow-right-rhombus.svg";
   const response = await fetch(url);
   const svg = await response.text();
   return new DOMParser().parseFromString(svg, "image/svg+xml");
@@ -637,7 +638,8 @@ function removeSvgTagAttributes(svg) {
 }
 
 function fixIconCode(svg) {
-  const course = courseNode.options[courseNode.selectedIndex].value;
+  // const course = courseNode.options[courseNode.selectedIndex].value;
+  const course = "tabler-icons";
   switch (course) {
     case "Solar-icon-set":
       for (const node of svg.querySelectorAll("[fill=black]")) {
