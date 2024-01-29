@@ -245,6 +245,11 @@ function getPoints(pathData) {
         points.push([x, y, null]);
         break;
       case "M":
+        x = segment.at(-2);
+        y = segment.at(-1);
+        n = i;
+        points.push([x, y, null]);
+        break;
       case "L":
       case "C":
       case "S":
@@ -256,6 +261,11 @@ function getPoints(pathData) {
         points.push([x, y, null]);
         break;
       case "m":
+        x += segment.at(-2);
+        y += segment.at(-1);
+        n = i;
+        points.push([x, y, null]);
+        break;
       case "l":
       case "c":
       case "s":
@@ -271,7 +281,6 @@ function getPoints(pathData) {
         x = points[n][0];
         y = points[n][1];
         points.push([x, y, n]);
-        n = i + 1;
         break;
     }
   });
@@ -536,8 +545,7 @@ async function fetchIconList(course) {
 }
 
 async function fetchIcon(url) {
-  // url = "/svg/phosphor-icons/regular/door.svg";
-  url = "/svg/tabler-icons/arrow-right-rhombus.svg";
+  url = "/svg/bootstrap-icons/shield-fill-check.svg";
   const response = await fetch(url);
   const svg = await response.text();
   return new DOMParser().parseFromString(svg, "image/svg+xml");
@@ -638,8 +646,7 @@ function removeSvgTagAttributes(svg) {
 }
 
 function fixIconCode(svg) {
-  // const course = courseNode.options[courseNode.selectedIndex].value;
-  const course = "tabler-icons";
+  const course = courseNode.options[courseNode.selectedIndex].value;
   switch (course) {
     case "Solar-icon-set":
       for (const node of svg.querySelectorAll("[fill=black]")) {
