@@ -738,6 +738,7 @@ async function nextProblem() {
   hideIcon(svg);
   addDots(getDotSize(svg));
   setViewBox(svg);
+  tehon.setAttribute("viewBox", svg.getAttribute("viewBox"));
 
   svg.style.width = "100%";
   svg.style.height = "100%";
