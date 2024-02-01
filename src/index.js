@@ -211,11 +211,11 @@ function addNumber(x, y, r, z, pathIndex, display, viewBox) {
   text.onmouseenter = (event) => handleTextClick(event, viewBox, pathIndex);
   text.onmousedown = (event) => {
     pad._strokeBegin(event);
-    handleTextClick(event, text, pathIndex);
+    handleTextClick(event, viewBox, pathIndex);
   };
   text.ontouchstart = (event) => {
     pad._strokeBegin(event);
-    handleTextClick(event, text, pathIndex);
+    handleTextClick(event, viewBox, pathIndex);
   };
   svg.appendChild(text);
   return text;
@@ -545,7 +545,8 @@ async function fetchIconList(course) {
 }
 
 async function fetchIcon(url) {
-  url = "/svg/bootstrap-icons/shield-fill-check.svg";
+  // url = "/svg/bootstrap-icons/shield-fill-check.svg";
+  url = "/svg/majesticons/line/image-circle-story-line.svg";
   const response = await fetch(url);
   const svg = await response.text();
   return new DOMParser().parseFromString(svg, "image/svg+xml");
