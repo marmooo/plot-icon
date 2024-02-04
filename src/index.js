@@ -121,7 +121,8 @@ function handleDotEvent(event, viewBox, pathIndex) {
   const { clientX, clientY } = event;
   const targets = document.elementsFromPoint(clientX, clientY)
     .filter((node) => node.tagName == "circle");
-  const dots = problem[pathIndex].dots;
+  const data = problem[pathIndex];
+  const dots = data.dots;
   const indexes = targets.map((dot) => dots.indexOf(dot))
     .filter((dot) => dot >= 0);
   if (dotIndexes.length == 0) {
@@ -139,17 +140,15 @@ function handleDotEvent(event, viewBox, pathIndex) {
     pad.clear();
     return;
   }
-  const currPath = problem[pathIndex].path;
-  if (connectCount != 0) currPath.nextElementSibling.remove();
+  if (connectCount != 0) data.path.nextElementSibling.remove();
   // text.style.cursor = "initial";
   // text.setAttribute("fill-opacity", 0.5);
   // text.onmouseenter = null;
 
-  const path = createPath(problem[pathIndex].path);
+  const path = createPath(data.path);
   resetCurrentColor(path);
   path.style.fill = "";
   path.style.stroke = "";
-  const data = problem[pathIndex];
   const pathData = data.pathData;
   const skippedDots = [];
 
@@ -173,6 +172,7 @@ function handleDotEvent(event, viewBox, pathIndex) {
       data.drawn[pos] = true;
       connectCount += 1;
       while (isSamePosition(data.rects[pos], data.rects[pos + 1])) {
+        alert("");
         data.drawn[pos + 1] = true;
         connectCount += 1;
         skippedDots.push(pos + 1);
@@ -185,8 +185,8 @@ function handleDotEvent(event, viewBox, pathIndex) {
   });
   if (data.drawn.every((status) => status)) {
     path.setAttribute("d", pathData.toString());
-    currPath.after(path);
-    problem[pathIndex].dots.forEach((prevText) => {
+    data.path.after(path);
+    dots.forEach((prevText) => {
       prevText.remove();
     });
     pad.clear();
@@ -208,7 +208,7 @@ function handleDotEvent(event, viewBox, pathIndex) {
     path.setAttribute("stroke", "gray");
     const strokeWidth = viewBox[3] / svg.clientWidth * 2;
     path.setAttribute("stroke-width", strokeWidth);
-    currPath.after(path);
+    data.path.after(path);
     pad.clear();
     dotIndexes = indexes;
     playAudio("correct1");
