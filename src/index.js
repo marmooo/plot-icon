@@ -104,6 +104,18 @@ function isSamePosition(rect1, rect2) {
   }
 }
 
+function clearDot(pos, data) {
+  if (pos == data.drawn.length - 1) {
+    if (data.drawn.at(-1)) {
+      data.dots[pos].setAttribute("fill", "gray");
+      data.dots[pos].setAttribute("fill-opacity", 0.5);
+    }
+  } else if (data.drawn[pos] && data.drawn[pos + 1]) {
+    data.dots[pos].setAttribute("fill", "gray");
+    data.dots[pos].setAttribute("fill-opacity", 0.5);
+  }
+}
+
 function handleTextClick(event, viewBox, pathIndex) {
   if (!pad._drawingStroke) return;
   const { clientX, clientY } = event;
@@ -139,6 +151,7 @@ function handleTextClick(event, viewBox, pathIndex) {
   path.style.stroke = "";
   const data = problem[pathIndex];
   const pathData = data.pathData;
+  const skippedDots = [];
 
   dotRoutes.forEach((routes, i) => {
     const posFrom = dotIndexes[i];
@@ -162,9 +175,13 @@ function handleTextClick(event, viewBox, pathIndex) {
       while (isSamePosition(data.rects[pos], data.rects[pos + 1])) {
         data.drawn[pos + 1] = true;
         connectCount += 1;
+        skippedDots.push(pos + 1);
         pos += 1;
       }
     });
+  });
+  [...indexes, ...dotIndexes, ...skippedDots].forEach((index) => {
+    clearDot(index, data);
   });
   if (data.drawn.every((status) => status)) {
     path.setAttribute("d", pathData.toString());
@@ -545,8 +562,8 @@ async function fetchIconList(course) {
 }
 
 async function fetchIcon(url) {
-  // url = "/svg/bootstrap-icons/shield-fill-check.svg";
-  url = "/svg/majesticons/line/image-circle-story-line.svg";
+  url = "/svg/bootstrap-icons/shield-fill-check.svg";
+  // url = "/svg/majesticons/line/image-circle-story-line.svg";
   const response = await fetch(url);
   const svg = await response.text();
   return new DOMParser().parseFromString(svg, "image/svg+xml");
