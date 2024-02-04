@@ -116,7 +116,7 @@ function clearDot(pos, data) {
   }
 }
 
-function handleTextClick(event, viewBox, pathIndex) {
+function handleDotEvent(event, viewBox, pathIndex) {
   if (!pad._drawingStroke) return;
   const { clientX, clientY } = event;
   const targets = document.elementsFromPoint(clientX, clientY)
@@ -216,26 +216,26 @@ function handleTextClick(event, viewBox, pathIndex) {
 }
 
 function addNumber(x, y, r, z, pathIndex, display, viewBox) {
-  const text = document.createElementNS(svgNamespace, "circle");
-  text.setAttribute("cx", x + r);
-  text.setAttribute("cy", y + r);
-  text.setAttribute("r", r);
-  text.setAttribute("fill", "currentColor");
-  if (z) text.setAttribute("data-z", z);
-  text.style.display = display;
-  text.style.cursor = "pointer";
-  text.textContent = Math.random();
-  text.onmouseenter = (event) => handleTextClick(event, viewBox, pathIndex);
-  text.onmousedown = (event) => {
+  const dot = document.createElementNS(svgNamespace, "circle");
+  dot.setAttribute("cx", x + r);
+  dot.setAttribute("cy", y + r);
+  dot.setAttribute("r", r);
+  dot.setAttribute("fill", "currentColor");
+  if (z) dot.setAttribute("data-z", z);
+  dot.style.display = display;
+  dot.style.cursor = "pointer";
+  dot.textContent = Math.random();
+  dot.onmouseenter = (event) => handleDotEvent(event, viewBox, pathIndex);
+  dot.onmousedown = (event) => {
     pad._strokeBegin(event);
-    handleTextClick(event, viewBox, pathIndex);
+    handleDotEvent(event, viewBox, pathIndex);
   };
-  text.ontouchstart = (event) => {
+  dot.ontouchstart = (event) => {
     pad._strokeBegin(event);
-    handleTextClick(event, viewBox, pathIndex);
+    handleDotEvent(event, viewBox, pathIndex);
   };
-  svg.appendChild(text);
-  return text;
+  svg.appendChild(dot);
+  return dot;
 }
 
 function getPoints(pathData) {
@@ -407,7 +407,7 @@ function addDots(r) {
     const dots = [];
     const display = (pathIndex == 0) ? "initial" : "none";
     rects.forEach((rect) => {
-      const text = addNumber(
+      const dot = addNumber(
         rect.left,
         rect.top,
         r,
@@ -416,7 +416,7 @@ function addDots(r) {
         display,
         viewBox,
       );
-      dots.push(text);
+      dots.push(dot);
       index += 1;
     });
     pathData.abs();
@@ -562,8 +562,8 @@ async function fetchIconList(course) {
 }
 
 async function fetchIcon(url) {
-  url = "/svg/bootstrap-icons/shield-fill-check.svg";
-  // url = "/svg/majesticons/line/image-circle-story-line.svg";
+  // url = "/svg/bootstrap-icons/shield-fill-check.svg";
+  url = "/svg/majesticons/line/image-circle-story-line.svg";
   const response = await fetch(url);
   const svg = await response.text();
   return new DOMParser().parseFromString(svg, "image/svg+xml");
