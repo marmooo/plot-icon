@@ -171,8 +171,8 @@ function handleDotEvent(event, viewBox, pathIndex) {
       }
       data.drawn[pos] = true;
       connectCount += 1;
+      // make dense points drawn
       while (isSamePosition(data.rects[pos], data.rects[pos + 1])) {
-        alert("");
         data.drawn[pos + 1] = true;
         connectCount += 1;
         skippedDots.push(pos + 1);
@@ -563,7 +563,8 @@ async function fetchIconList(course) {
 
 async function fetchIcon(url) {
   // url = "/svg/bootstrap-icons/shield-fill-check.svg";
-  url = "/svg/majesticons/line/image-circle-story-line.svg";
+  // url = "/svg/majesticons/line/image-circle-story-line.svg";
+  console.log(url);
   const response = await fetch(url);
   const svg = await response.text();
   return new DOMParser().parseFromString(svg, "image/svg+xml");
