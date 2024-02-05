@@ -24,11 +24,12 @@
   [MIT](https://github.com/twbs/icons/blob/main/LICENSE.md)
 - [Remix Icon](https://github.com/Remix-Design/RemixIcon) licensed under the
   [Apache-2.0](https://github.com/Remix-Design/RemixIcon/blob/master/License)
-- [Solar Icon Set](https://github.com/480-Design/Solar-icon-set) licensed under
-  the [CC-BY-4.0](https://www.figma.com/community/file/1166831539721848736)
 - [Iconoir](https://github.com/iconoir-icons/iconoir) licensed under the
   [MIT](https://github.com/iconoir-icons/iconoir/blob/main/LICENSE)
 - [Majesticons](https://github.com/halfmage/majesticons) licensed under the
   [MIT](https://github.com/halfmage/majesticons/blob/main/LICENSE)
 - [Lucide](https://github.com/lucide-icons/lucide) licensed under the
   [ISC](https://github.com/lucide-icons/lucide/blob/main/LICENSE)
+- [Streamline Core](https://github.com/webalys-hq/streamline-vectors) is
+  licensed under the
+  [CC-BY-4.0](https://github.com/webalys-hq/streamline-vectors/tree/main/core)

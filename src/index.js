@@ -678,6 +678,11 @@ function fixIconCode(svg) {
     case "tabler-icons":
       svg.firstElementChild.remove();
       break;
+    case "streamline-vectors":
+      for (const node of svg.querySelectorAll('[stroke="#3e3e3e"]')) {
+        node.setAttribute("stroke", "gray");
+      }
+      break;
   }
 }
 

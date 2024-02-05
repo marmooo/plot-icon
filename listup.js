@@ -7,10 +7,10 @@ const dirs = [
   "tabler-icons",
   "bootstrap-icons",
   "RemixIcon",
-  "Solar-icon-set",
   "iconoir",
   "majesticons",
   "lucide",
+  "streamline-vectors",
 ];
 const baseDir = Deno.realPathSync("svg");
 for (const dir of dirs) {
