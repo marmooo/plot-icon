@@ -10,4 +10,4 @@ rsync -a --delete vendor/iconoir/icons/ svg/iconoir/
 rsync -a --delete vendor/majesticons/line/ svg/majesticons/line/
 rsync -a --delete vendor/majesticons/solid/ svg/majesticons/solid/
 rsync -a --delete-excluded --exclude="*.json" vendor/lucide/icons/ svg/lucide/
-rsync -a --delete vendor/streamline-vectors/core/line/ docs/svg/streamline-vectors/core/line/
+rsync -a --delete vendor/streamline-vectors/core/line/ svg/streamline-vectors/core/line/
