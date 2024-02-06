@@ -1,13 +1,13 @@
 const CACHE_NAME = "2024-01-07 14:50";
 const urlsToCache = [
-  "/number-icon/",
-  "/number-icon/en/",
-  "/number-icon/index.js",
-  "/number-icon/mp3/boyon1.mp3",
-  "/number-icon/mp3/pa1.mp3",
-  "/number-icon/mp3/papa1.mp3",
-  "/number-icon/mp3/levelup1.mp3",
-  "/number-icon/favicon/favicon.svg",
+  "/plot-icon/",
+  "/plot-icon/en/",
+  "/plot-icon/index.js",
+  "/plot-icon/mp3/boyon1.mp3",
+  "/plot-icon/mp3/pa1.mp3",
+  "/plot-icon/mp3/papa1.mp3",
+  "/plot-icon/mp3/levelup1.mp3",
+  "/plot-icon/favicon/favicon.svg",
 ];
 
 self.addEventListener("install", (event) => {
