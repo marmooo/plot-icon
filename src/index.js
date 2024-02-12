@@ -70,15 +70,6 @@ function createPath(node) {
   return path;
 }
 
-function isOverlapped(target, rect) {
-  return target.some((targetRect) =>
-    targetRect.left < rect.right &&
-    targetRect.right > rect.left &&
-    targetRect.top < rect.bottom &&
-    targetRect.bottom > rect.top
-  );
-}
-
 function getConnectableIndex(prevIndex, dot) {
   const dots = problem[currPathIndex].dots;
   const prevDot = dots[prevIndex];
@@ -142,17 +133,12 @@ function handleDotEvent(event) {
     return;
   }
   if (connectCount != 0) data.path.nextElementSibling.remove();
-  // text.style.cursor = "initial";
-  // text.setAttribute("fill-opacity", 0.5);
-  // text.onmouseenter = null;
-
   const path = createPath(data.path);
   resetCurrentColor(path);
   path.style.fill = "";
   path.style.stroke = "";
   const pathData = data.pathData;
   const skippedDots = [];
-
   dotRoutes.forEach((routes, i) => {
     const posFrom = dotIndexes[i];
     routes.forEach((posTo) => {
@@ -217,16 +203,7 @@ function handleDotEvent(event) {
   }
 }
 
-function addNumber(x, y, r, z, display) {
-  const dot = document.createElementNS(svgNamespace, "circle");
-  dot.setAttribute("cx", x + r);
-  dot.setAttribute("cy", y + r);
-  dot.setAttribute("r", r);
-  dot.setAttribute("fill", "currentColor");
-  if (z) dot.setAttribute("data-z", z);
-  dot.style.display = display;
-  dot.style.cursor = "pointer";
-  dot.textContent = Math.random();
+function initDotEvents(dot) {
   dot.onmouseenter = handleDotEvent;
   dot.onmousedown = (event) => {
     if (!pad._drawingStroke) pad._strokeBegin(event);
@@ -246,6 +223,19 @@ function addNumber(x, y, r, z, display) {
       handleDotEvent(touch);
     }
   };
+}
+
+function addNumber(x, y, r, z, display) {
+  const dot = document.createElementNS(svgNamespace, "circle");
+  dot.setAttribute("cx", x + r);
+  dot.setAttribute("cy", y + r);
+  dot.setAttribute("r", r);
+  dot.setAttribute("fill", "currentColor");
+  if (z) dot.setAttribute("data-z", z);
+  dot.style.display = display;
+  dot.style.cursor = "pointer";
+  dot.textContent = Math.random();
+  initDotEvents(dot);
   svg.appendChild(dot);
   return dot;
 }
@@ -368,29 +358,18 @@ function initPoints(points, pathData) {
   return pathData;
 }
 
-function getRects(points, r, skipThreshold) {
+function getRects(points, r) {
   const rects = [];
-  let px = -Infinity;
-  let py = -Infinity;
-  let reduced = 0;
   points.forEach(([x, y, z], i) => {
-    const distance = Math.sqrt((x - px) ** 2 + (y - py) ** 2);
-    // if (skipThreshold < distance) {
-    const zPos = (z != null) ? z - reduced : z;
     const rect = {
       left: x - r,
       top: y - r,
       right: x + r,
       bottom: y + r,
       i,
-      z: zPos,
+      z,
     };
     rects.push(rect);
-    px = x;
-    py = y;
-    // } else {
-    //   reduced += 1;
-    // }
   });
   return rects;
 }
@@ -408,13 +387,11 @@ function initDrawnStatus(segments) {
 }
 
 function addDots(r) {
-  const viewBox = getViewBox(svg);
-  const skipThreshold = viewBox[3] * skipFactor;
   let index = 1;
   problem.forEach((data, pathIndex) => {
     const pathData = svgpath(data.path.getAttribute("d"));
     const points = getPoints(pathData);
-    const rects = getRects(points, r, skipThreshold);
+    const rects = getRects(points, r);
 
     const dots = [];
     const display = (pathIndex == 0) ? "initial" : "none";
@@ -566,9 +543,6 @@ async function fetchIconList(course) {
 }
 
 async function fetchIcon(url) {
-  // url = "/svg/bootstrap-icons/shield-fill-check.svg";
-  // url = "/svg/majesticons/line/image-circle-story-line.svg";
-  console.log(url);
   const response = await fetch(url);
   const svg = await response.text();
   return new DOMParser().parseFromString(svg, "image/svg+xml");
@@ -722,22 +696,7 @@ function styleAttributeToAttributes(svg) {
   });
 }
 
-async function nextProblem() {
-  connectCount = 0;
-  currPathIndex = 0;
-  const courseNode = document.getElementById("course");
-  const course = courseNode.options[courseNode.selectedIndex].value;
-  if (iconList.length == 0) {
-    iconList = await fetchIconList(course);
-  }
-  const filePath = iconList[getRandomInt(0, iconList.length)];
-  const url = `/svg/${course}/${filePath}`;
-  const icon = await fetchIcon(url);
-  svg = icon.documentElement;
-  const tehon = svg.cloneNode(true);
-  tehon.style.width = "100%";
-  tehon.style.height = "100%";
-
+function initSVGEvents() {
   svg.addEventListener("mousedown", (event) => pad._strokeBegin(event));
   svg.addEventListener("mousemove", (event) => pad._strokeUpdate(event));
   svg.addEventListener("mouseup", () => {
@@ -770,6 +729,24 @@ async function nextProblem() {
       }
     }
   });
+}
+
+async function nextProblem() {
+  connectCount = 0;
+  currPathIndex = 0;
+  const courseNode = document.getElementById("course");
+  const course = courseNode.options[courseNode.selectedIndex].value;
+  if (iconList.length == 0) {
+    iconList = await fetchIconList(course);
+  }
+  const filePath = iconList[getRandomInt(0, iconList.length)];
+  const url = `/svg/${course}/${filePath}`;
+  const icon = await fetchIcon(url);
+  svg = icon.documentElement;
+  const tehon = svg.cloneNode(true);
+  tehon.style.width = "100%";
+  tehon.style.height = "100%";
+  initSVGEvents();
 
   fixIconCode(svg);
   styleAttributeToAttributes(svg);
@@ -829,7 +806,6 @@ function resizeCanvas() {
 
 const svgNamespace = "http://www.w3.org/2000/svg";
 const xlinkNamespace = "http://www.w3.org/1999/xlink";
-const skipFactor = 0.05;
 let dotIndexes = [];
 let connectCount = 0;
 let currPathIndex = 0;
