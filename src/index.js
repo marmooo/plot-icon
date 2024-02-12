@@ -79,8 +79,8 @@ function isOverlapped(target, rect) {
   );
 }
 
-function getConnectableIndex(prevIndex, dot, pathIndex) {
-  const dots = problem[pathIndex].dots;
+function getConnectableIndex(prevIndex, dot) {
+  const dots = problem[currPathIndex].dots;
   const prevDot = dots[prevIndex];
   const z = Number(prevDot.dataset.z);
   if (z) {
@@ -116,12 +116,13 @@ function clearDot(pos, data) {
   }
 }
 
-function handleDotEvent(event, viewBox, pathIndex) {
+function handleDotEvent(event) {
   if (!pad._drawingStroke) return;
   const { clientX, clientY } = event;
   const targets = document.elementsFromPoint(clientX, clientY)
     .filter((node) => node.tagName == "circle");
-  const data = problem[pathIndex];
+  if (targets.length == 0) return;
+  const data = problem[currPathIndex];
   const dots = data.dots;
   const indexes = targets.map((dot) => dots.indexOf(dot))
     .filter((dot) => dot >= 0);
@@ -131,11 +132,11 @@ function handleDotEvent(event, viewBox, pathIndex) {
     return;
   }
   const dotRoutes = dotIndexes.map((prevIndex) => {
-    return indexes.map((index) =>
-      getConnectableIndex(prevIndex, dots[index], pathIndex)
-    ).filter((index) => indexes.includes(index));
+    return indexes.map((index) => getConnectableIndex(prevIndex, dots[index]))
+      .filter((index) => indexes.includes(index));
   });
   if (dotRoutes.every((routes) => routes.length == 0)) {
+    if (dotIndexes.every((x, i) => x == indexes[i])) return;
     playAudio("error");
     pad.clear();
     return;
@@ -191,7 +192,7 @@ function handleDotEvent(event, viewBox, pathIndex) {
     });
     pad.clear();
     dotIndexes = [];
-    if (pathIndex + 1 == problem.length) {
+    if (currPathIndex + 1 == problem.length) {
       playAudio("correctAll");
     } else {
       playAudio("correct2");
@@ -206,6 +207,7 @@ function handleDotEvent(event, viewBox, pathIndex) {
     path.setAttribute("d", newPathData.toString());
     path.setAttribute("fill", "none");
     path.setAttribute("stroke", "gray");
+    const viewBox = getViewBox(svg);
     const strokeWidth = viewBox[3] / svg.clientWidth * 2;
     path.setAttribute("stroke-width", strokeWidth);
     data.path.after(path);
@@ -215,7 +217,7 @@ function handleDotEvent(event, viewBox, pathIndex) {
   }
 }
 
-function addNumber(x, y, r, z, pathIndex, display, viewBox) {
+function addNumber(x, y, r, z, display) {
   const dot = document.createElementNS(svgNamespace, "circle");
   dot.setAttribute("cx", x + r);
   dot.setAttribute("cy", y + r);
@@ -225,14 +227,24 @@ function addNumber(x, y, r, z, pathIndex, display, viewBox) {
   dot.style.display = display;
   dot.style.cursor = "pointer";
   dot.textContent = Math.random();
-  dot.onmouseenter = (event) => handleDotEvent(event, viewBox, pathIndex);
+  dot.onmouseenter = handleDotEvent;
   dot.onmousedown = (event) => {
-    pad._strokeBegin(event);
-    handleDotEvent(event, viewBox, pathIndex);
+    if (!pad._drawingStroke) pad._strokeBegin(event);
+    handleDotEvent(event);
   };
   dot.ontouchstart = (event) => {
-    pad._strokeBegin(event);
-    handleDotEvent(event, viewBox, pathIndex);
+    if (touchId) {
+      for (let i = 0; i < event.changedTouches.length; i++) {
+        const touch = event.changedTouches[i];
+        if (touch.identifier == touchId) {
+          handleDotEvent(touch);
+        }
+      }
+    } else {
+      const touch = event.changedTouches[0];
+      pad._strokeBegin(touch);
+      handleDotEvent(touch);
+    }
   };
   svg.appendChild(dot);
   return dot;
@@ -407,15 +419,7 @@ function addDots(r) {
     const dots = [];
     const display = (pathIndex == 0) ? "initial" : "none";
     rects.forEach((rect) => {
-      const dot = addNumber(
-        rect.left,
-        rect.top,
-        r,
-        rect.z,
-        pathIndex,
-        display,
-        viewBox,
-      );
+      const dot = addNumber(rect.left, rect.top, r, rect.z, display);
       dots.push(dot);
       index += 1;
     });
@@ -740,11 +744,31 @@ async function nextProblem() {
     pad.clear();
     dotIndexes = [];
   });
-  svg.addEventListener("touchstart", (event) => pad._strokeBegin(event));
-  svg.addEventListener("touchmove", (event) => pad._strokeUpdate(event));
-  svg.addEventListener("touchend", () => {
-    pad.clear();
-    dotIndexes = [];
+  svg.addEventListener("touchstart", (event) => {
+    const touch = event.changedTouches[0];
+    if (!touchId) {
+      touchId = touch.identifier;
+      pad._strokeBegin(touch);
+    }
+  });
+  svg.addEventListener("touchmove", (event) => {
+    for (let i = 0; i < event.targetTouches.length; i++) {
+      const touch = event.targetTouches[i];
+      if (touch.identifier == touchId) {
+        pad._strokeUpdate(touch);
+        handleDotEvent(touch);
+      }
+    }
+  });
+  svg.addEventListener("touchend", (event) => {
+    for (let i = 0; i < event.changedTouches.length; i++) {
+      const touch = event.changedTouches[i];
+      if (touch.identifier == touchId) {
+        touchId = null;
+        pad.clear();
+        dotIndexes = [];
+      }
+    }
   });
 
   fixIconCode(svg);
@@ -796,7 +820,7 @@ function selectAttribution(index) {
 }
 
 function resizeCanvas() {
-  const ratio =  Math.max(globalThis.devicePixelRatio || 1, 1);
+  const ratio = Math.max(globalThis.devicePixelRatio || 1, 1);
   canvas.width = canvas.offsetWidth * ratio;
   canvas.height = canvas.offsetHeight * ratio;
   canvas.getContext("2d").scale(ratio, ratio);
@@ -812,6 +836,7 @@ let currPathIndex = 0;
 let svg;
 let problem;
 let iconList = [];
+let touchId;
 
 const canvas = document.getElementById("canvas");
 canvas.width = canvas.offsetWidth;

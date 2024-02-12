@@ -37,6 +37,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
       #problem { width:auto; height:calc(100vh - 90px); }
+      #tegaki { touch-action:none; --ms-touch-action:none; user-select:none; }
       #iconContainer { max-width:100%; max-height:100%; aspect-ratio:1/1; }
       html[data-bs-theme="dark"] .favicon { filter: invert(1) hue-rotate(180deg); }
     </style>
@@ -89,7 +90,7 @@
         </div>
         <div class="col-md">
           <div class="position-relative">
-            <div class="iconContainer"></div>
+            <div id="tegaki" class="iconContainer"></div>
             <canvas id="canvas"></canvas>
           </div>
         </div>
