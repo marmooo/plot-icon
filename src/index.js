@@ -795,6 +795,14 @@ function selectAttribution(index) {
   });
 }
 
+function resizeCanvas() {
+  const ratio =  Math.max(globalThis.devicePixelRatio || 1, 1);
+  canvas.width = canvas.offsetWidth * ratio;
+  canvas.height = canvas.offsetHeight * ratio;
+  canvas.getContext("2d").scale(ratio, ratio);
+  pad.clear();
+}
+
 const svgNamespace = "http://www.w3.org/2000/svg";
 const xlinkNamespace = "http://www.w3.org/1999/xlink";
 const skipFactor = 0.05;
@@ -814,6 +822,7 @@ const pad = new signaturePad(canvas, {
   throttle: 0,
   minDistance: 0,
 });
+globalThis.addEventListener("resize", resizeCanvas);
 
 selectRandomCourse();
 nextProblem();
