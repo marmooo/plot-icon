@@ -107,43 +107,15 @@ function clearDot(pos, data) {
   }
 }
 
-function handleDotEvent(event) {
-  if (!pad._drawingStroke) return;
-  const { clientX, clientY } = event;
-  const targets = document.elementsFromPoint(clientX, clientY)
-    .filter((node) => node.tagName == "circle");
-  if (targets.length == 0) return;
-  const data = problem[currPathIndex];
-  const dots = data.dots;
-  const indexes = targets.map((dot) => dots.indexOf(dot))
-    .filter((dot) => dot >= 0);
-  if (dotIndexes.length == 0) {
-    dotIndexes = indexes;
-    playAudio("correct1");
-    return;
-  }
-  const dotRoutes = dotIndexes.map((prevIndex) => {
-    return indexes.map((index) => getConnectableIndex(prevIndex, dots[index]))
-      .filter((index) => indexes.includes(index));
-  });
-  if (dotRoutes.every((routes) => routes.length == 0)) {
-    if (dotIndexes.every((x, i) => x == indexes[i])) return;
-    playAudio("error");
-    pad.clear();
-    return;
-  }
-  if (connectCount != 0) data.path.nextElementSibling.remove();
-  const path = createPath(data.path);
-  resetCurrentColor(path);
-  path.style.fill = "";
-  path.style.stroke = "";
+function updateSegments(data, dotRoutes, indexes) {
   const pathData = data.pathData;
+  const rects = data.rects;
   const skippedDots = [];
   dotRoutes.forEach((routes, i) => {
     const posFrom = dotIndexes[i];
     routes.forEach((posTo) => {
-      const rectsFrom = data.rects[posFrom];
-      const rectsTo = data.rects[posTo];
+      const rectsFrom = rects[posFrom];
+      const rectsTo = rects[posTo];
       let pos = Math.max(rectsFrom.i, rectsTo.i);
       if (rectsFrom.z != null) {
         const x = (rectsFrom.left + rectsFrom.right) / 2;
@@ -159,7 +131,7 @@ function handleDotEvent(event) {
       data.drawn[pos] = true;
       connectCount += 1;
       // make dense points drawn
-      while (isSamePosition(data.rects[pos], data.rects[pos + 1])) {
+      while (isSamePosition(rects[pos], rects[pos + 1])) {
         data.drawn[pos + 1] = true;
         connectCount += 1;
         skippedDots.push(pos + 1);
@@ -170,36 +142,76 @@ function handleDotEvent(event) {
   [...indexes, ...dotIndexes, ...skippedDots].forEach((index) => {
     clearDot(index, data);
   });
-  if (data.drawn.every((status) => status)) {
-    path.setAttribute("d", pathData.toString());
-    data.path.after(path);
-    dots.forEach((prevText) => {
-      prevText.remove();
-    });
-    pad.clear();
-    dotIndexes = [];
-    if (currPathIndex + 1 == problem.length) {
-      playAudio("correctAll");
-    } else {
-      playAudio("correct2");
-      connectCount = 0;
-      currPathIndex += 1;
-      problem[currPathIndex].dots.forEach((currDot) => {
-        currDot.style.display = "initial";
-      });
-    }
+}
+
+function handleAllDotsDrawn(path, data) {
+  path.setAttribute("d", data.pathData.toString());
+  data.path.after(path);
+  data.dots.forEach((dot) => dot.remove());
+  pad.clear();
+  dotIndexes = [];
+  if (currPathIndex + 1 == problem.length) {
+    playAudio("correctAll");
   } else {
-    const newPathData = new svgpath.from(pathData);
-    path.setAttribute("d", newPathData.toString());
-    path.setAttribute("fill", "none");
-    path.setAttribute("stroke", "gray");
-    const viewBox = getViewBox(svg);
-    const strokeWidth = viewBox[3] / svg.clientWidth * 2;
-    path.setAttribute("stroke-width", strokeWidth);
-    data.path.after(path);
-    pad.clear();
+    playAudio("correct2");
+    connectCount = 0;
+    currPathIndex += 1;
+    problem[currPathIndex].dots.forEach((dot) => {
+      dot.style.display = "initial";
+    });
+  }
+}
+
+function handleRemainingDots(path, data, indexes) {
+  const newPathData = new svgpath.from(data.pathData);
+  path.setAttribute("d", newPathData.toString());
+  path.setAttribute("fill", "none");
+  path.setAttribute("stroke", "gray");
+  const viewBox = getViewBox(svg);
+  const strokeWidth = viewBox[3] / svg.clientWidth * 2;
+  path.setAttribute("stroke-width", strokeWidth);
+  data.path.after(path);
+  pad.clear();
+  dotIndexes = indexes;
+  playAudio("correct1");
+}
+
+function handleDotEvent(event) {
+  if (!pad._drawingStroke) return;
+  const { clientX, clientY } = event;
+  const targets = document.elementsFromPoint(clientX, clientY)
+    .filter((node) => node.tagName == "circle");
+  if (targets.length == 0) return;
+  const data = problem[currPathIndex];
+  const dots = data.dots;
+  const indexes = targets.map((dot) => dots.indexOf(dot))
+    .filter((dot) => dot >= 0);
+  if (dotIndexes.length == 0) {
     dotIndexes = indexes;
     playAudio("correct1");
+  } else {
+    const dotRoutes = dotIndexes.map((prevIndex) => {
+      return indexes.map((index) => getConnectableIndex(prevIndex, dots[index]))
+        .filter((index) => indexes.includes(index));
+    });
+    if (dotRoutes.every((routes) => routes.length == 0)) {
+      // avoid event mash
+      if (dotIndexes.every((x, i) => x == indexes[i])) return;
+      playAudio("error");
+      pad.clear();
+    } else {
+      if (connectCount != 0) data.path.nextElementSibling.remove();
+      updateSegments(data, dotRoutes, indexes);
+      const path = createPath(data.path);
+      resetCurrentColor(path);
+      path.style.fill = "";
+      path.style.stroke = "";
+      if (data.drawn.every((status) => status)) {
+        handleAllDotsDrawn(path, data);
+      } else {
+        handleRemainingDots(path, data, indexes);
+      }
+    }
   }
 }
 
