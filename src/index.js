@@ -827,14 +827,13 @@ let iconList = [];
 let touchId;
 
 const canvas = document.getElementById("canvas");
-canvas.width = canvas.offsetWidth;
-canvas.height = canvas.offsetHeight;
 const pad = new signaturePad(canvas, {
   minWidth: 3,
   maxWidth: 3,
   throttle: 0,
   minDistance: 0,
 });
+resizeCanvas();
 globalThis.addEventListener("resize", resizeCanvas);
 
 selectRandomCourse();
