@@ -756,8 +756,6 @@ async function nextProblem() {
   const icon = await fetchIcon(url);
   svg = icon.documentElement;
   const tehon = svg.cloneNode(true);
-  tehon.style.width = "100%";
-  tehon.style.height = "100%";
   initSVGEvents();
 
   fixIconCode(svg);
@@ -767,21 +765,25 @@ async function nextProblem() {
   removeSvgTagAttributes(svg);
   shape2path(svg, createPath, { circleAlgorithm: "QuadBezier" });
   removeUseTags(svg);
+
+  const targets = document.querySelectorAll("#problems .iconContainer");
+  targets[0].replaceChildren(tehon);
+  targets[1].replaceChildren(svg);
   removeTransforms(svg);
+
   problem = [];
   [...svg.getElementsByTagName("path")].forEach((path) => {
     problem.push({ path });
   });
   hideIcon(svg);
   addDots(getDotSize(svg));
-  setViewBox(svg);
-  tehon.setAttribute("viewBox", svg.getAttribute("viewBox"));
 
   svg.style.width = "100%";
   svg.style.height = "100%";
-  const targets = document.querySelectorAll("#problems .iconContainer");
-  targets[0].replaceChildren(tehon);
-  targets[1].replaceChildren(svg);
+  tehon.style.width = "100%";
+  tehon.style.height = "100%";
+  setViewBox(svg);
+  tehon.setAttribute("viewBox", svg.getAttribute("viewBox"));
 }
 
 async function changeCourse() {
