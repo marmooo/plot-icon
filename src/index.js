@@ -657,20 +657,16 @@ function removeSvgTagAttributes(svg) {
 function fixIconCode(svg) {
   const course = courseNode.options[courseNode.selectedIndex].value;
   switch (course) {
-    case "Solar-icon-set":
-      for (const node of svg.querySelectorAll("[fill=black]")) {
-        node.setAttribute("fill", "gray");
-      }
-      for (const node of svg.querySelectorAll("[stroke=black]")) {
-        node.setAttribute("stroke", "gray");
-      }
+    case "material-symbols":
+    case "material-design-icons":
+      svg.setAttribute("fill", "currentColor");
       break;
     case "tabler-icons":
       svg.firstElementChild.remove();
       break;
     case "streamline-vectors":
       for (const node of svg.querySelectorAll('[stroke="#3e3e3e"]')) {
-        node.setAttribute("stroke", "gray");
+        node.setAttribute("stroke", "currentColor");
       }
       break;
   }
@@ -755,10 +751,10 @@ async function nextProblem() {
   const url = `/svg/${course}/${filePath}`;
   const icon = await fetchIcon(url);
   svg = icon.documentElement;
+  fixIconCode(svg);
   const tehon = svg.cloneNode(true);
   initSVGEvents();
 
-  fixIconCode(svg);
   styleAttributeToAttributes(svg);
   if (!svg.getAttribute("fill")) svg.setAttribute("fill", "gray");
   resetCurrentColor(svg);
@@ -834,6 +830,7 @@ const pad = new signaturePad(canvas, {
   maxWidth: 3,
   throttle: 0,
   minDistance: 0,
+  penColor: "gray",
 });
 resizeCanvas();
 globalThis.addEventListener("resize", resizeCanvas);
