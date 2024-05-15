@@ -218,7 +218,10 @@ function handleDotEvent(event) {
 function initDotEvents(dot) {
   dot.onmouseenter = handleDotEvent;
   dot.onmousedown = (event) => {
-    if (!pad._drawingStroke) pad._strokeBegin(event);
+    if (!pad._drawingStroke) {
+      const signatureEvent = pad._pointerEventToSignatureEvent(event);
+      pad._strokeBegin(signatureEvent);
+    }
     handleDotEvent(event);
   };
   dot.ontouchstart = (event) => {
@@ -231,7 +234,8 @@ function initDotEvents(dot) {
       }
     } else {
       const touch = event.changedTouches[0];
-      pad._strokeBegin(touch);
+      const signatureEvent = pad._pointerEventToSignatureEvent(touch);
+      pad._strokeBegin(signatureEvent);
       handleDotEvent(touch);
     }
   };
@@ -705,8 +709,14 @@ function styleAttributeToAttributes(svg) {
 }
 
 function initSVGEvents() {
-  svg.addEventListener("mousedown", (event) => pad._strokeBegin(event));
-  svg.addEventListener("mousemove", (event) => pad._strokeUpdate(event));
+  svg.addEventListener("mousedown", (event) => {
+    const signatureEvent = pad._pointerEventToSignatureEvent(event);
+    pad._strokeBegin(signatureEvent);
+  });
+  svg.addEventListener("mousemove", (event) => {
+    const signatureEvent = pad._pointerEventToSignatureEvent(event);
+    pad._strokeUpdate(signatureEvent);
+  });
   svg.addEventListener("mouseup", () => {
     pad.clear();
     dotIndexes = [];
@@ -715,14 +725,16 @@ function initSVGEvents() {
     const touch = event.changedTouches[0];
     if (!touchId) {
       touchId = touch.identifier;
-      pad._strokeBegin(touch);
+      const signatureEvent = pad._pointerEventToSignatureEvent(touch);
+      pad._strokeBegin(signatureEvent);
     }
   });
   svg.addEventListener("touchmove", (event) => {
     for (let i = 0; i < event.targetTouches.length; i++) {
       const touch = event.targetTouches[i];
       if (touch.identifier == touchId) {
-        pad._strokeUpdate(touch);
+        const signatureEvent = pad._pointerEventToSignatureEvent(touch);
+        pad._strokeUpdate(signatureEvent);
         handleDotEvent(touch);
       }
     }
