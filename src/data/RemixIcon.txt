@@ -1,4 +1,3 @@
-Arrows/arrow-down-circle-fill 2.svg
 Arrows/arrow-down-circle-fill.svg
 Arrows/arrow-down-circle-line.svg
 Arrows/arrow-down-double-fill.svg
@@ -71,6 +70,10 @@ Arrows/collapse-diagonal-2-fill.svg
 Arrows/collapse-diagonal-2-line.svg
 Arrows/collapse-diagonal-fill.svg
 Arrows/collapse-diagonal-line.svg
+Arrows/collapse-horizontal-fill.svg
+Arrows/collapse-horizontal-line.svg
+Arrows/collapse-vertical-fill.svg
+Arrows/collapse-vertical-line.svg
 Arrows/contract-left-fill.svg
 Arrows/contract-left-line.svg
 Arrows/contract-left-right-fill.svg
@@ -107,8 +110,16 @@ Arrows/expand-diagonal-2-fill.svg
 Arrows/expand-diagonal-2-line.svg
 Arrows/expand-diagonal-fill.svg
 Arrows/expand-diagonal-line.svg
+Arrows/expand-diagonal-s-2-fill.svg
+Arrows/expand-diagonal-s-2-line.svg
+Arrows/expand-diagonal-s-fill.svg
+Arrows/expand-diagonal-s-line.svg
 Arrows/expand-height-fill.svg
 Arrows/expand-height-line.svg
+Arrows/expand-horizontal-fill.svg
+Arrows/expand-horizontal-line.svg
+Arrows/expand-horizontal-s-fill.svg
+Arrows/expand-horizontal-s-line.svg
 Arrows/expand-left-fill.svg
 Arrows/expand-left-line.svg
 Arrows/expand-left-right-fill.svg
@@ -117,6 +128,10 @@ Arrows/expand-right-fill.svg
 Arrows/expand-right-line.svg
 Arrows/expand-up-down-fill.svg
 Arrows/expand-up-down-line.svg
+Arrows/expand-vertical-fill.svg
+Arrows/expand-vertical-line.svg
+Arrows/expand-vertical-s-fill.svg
+Arrows/expand-vertical-s-line.svg
 Arrows/expand-width-fill.svg
 Arrows/expand-width-line.svg
 Arrows/scroll-to-bottom-fill.svg
@@ -383,13 +398,14 @@ Business/stack-fill.svg
 Business/stack-line.svg
 Business/trademark-fill.svg
 Business/trademark-line.svg
+Business/triangular-flag-fill.svg
+Business/triangular-flag-line.svg
 Business/verified-badge-fill.svg
 Business/verified-badge-line.svg
 Business/window-2-fill.svg
 Business/window-2-line.svg
 Business/window-fill.svg
 Business/window-line.svg
-Communication/chat-1-fill 2.svg
 Communication/chat-1-fill.svg
 Communication/chat-1-line.svg
 Communication/chat-2-fill.svg
@@ -422,6 +438,8 @@ Communication/chat-private-fill.svg
 Communication/chat-private-line.svg
 Communication/chat-quote-fill.svg
 Communication/chat-quote-line.svg
+Communication/chat-search-fill.svg
+Communication/chat-search-line.svg
 Communication/chat-settings-fill.svg
 Communication/chat-settings-line.svg
 Communication/chat-smile-2-fill.svg
@@ -432,6 +450,8 @@ Communication/chat-smile-fill.svg
 Communication/chat-smile-line.svg
 Communication/chat-thread-fill.svg
 Communication/chat-thread-line.svg
+Communication/chat-unread-fill.svg
+Communication/chat-unread-line.svg
 Communication/chat-upload-fill.svg
 Communication/chat-upload-line.svg
 Communication/chat-voice-fill.svg
@@ -740,7 +760,6 @@ Device/battery-charge-fill.svg
 Device/battery-charge-line.svg
 Device/battery-fill.svg
 Device/battery-line.svg
-Device/battery-low-fill 2.svg
 Device/battery-low-fill.svg
 Device/battery-low-line.svg
 Device/battery-saver-fill.svg
@@ -785,7 +804,6 @@ Device/gps-fill.svg
 Device/gps-line.svg
 Device/gradienter-fill.svg
 Device/gradienter-line.svg
-Device/hard-drive-2-fill 2.svg
 Device/hard-drive-2-fill.svg
 Device/hard-drive-2-line.svg
 Device/hard-drive-3-fill.svg
@@ -931,7 +949,6 @@ Document/contract-line.svg
 Document/draft-fill.svg
 Document/draft-line.svg
 Document/file-2-fill.svg
-Document/file-2-line 2.svg
 Document/file-2-line.svg
 Document/file-3-fill.svg
 Document/file-3-line.svg
@@ -1119,7 +1136,6 @@ Document/pages-fill.svg
 Document/pages-line.svg
 Document/receipt-fill.svg
 Document/receipt-line.svg
-Document/sticky-note-2-fill 2.svg
 Document/sticky-note-2-fill.svg
 Document/sticky-note-2-line.svg
 Document/sticky-note-add-fill.svg
@@ -1181,7 +1197,6 @@ Editor/h-5.svg
 Editor/h-6.svg
 Editor/hand.svg
 Editor/hashtag.svg
-Editor/heading 2.svg
 Editor/heading.svg
 Editor/indent-decrease.svg
 Editor/indent-increase.svg
@@ -1469,14 +1484,20 @@ Health & Medical/aed-electrodes-fill.svg
 Health & Medical/aed-electrodes-line.svg
 Health & Medical/aed-fill.svg
 Health & Medical/aed-line.svg
+Health & Medical/brain-2-fill.svg
+Health & Medical/brain-2-line.svg
 Health & Medical/brain-fill.svg
 Health & Medical/brain-line.svg
 Health & Medical/capsule-fill.svg
 Health & Medical/capsule-line.svg
 Health & Medical/dislike-fill.svg
 Health & Medical/dislike-line.svg
+Health & Medical/dna-fill.svg
+Health & Medical/dna-line.svg
 Health & Medical/dossier-fill.svg
 Health & Medical/dossier-line.svg
+Health & Medical/dropper-fill.svg
+Health & Medical/dropper-line.svg
 Health & Medical/empathize-fill.svg
 Health & Medical/empathize-line.svg
 Health & Medical/first-aid-kit-fill.svg
@@ -1613,6 +1634,8 @@ Logos/friendica-fill.svg
 Logos/friendica-line.svg
 Logos/gatsby-fill.svg
 Logos/gatsby-line.svg
+Logos/gemini-fill.svg
+Logos/gemini-line.svg
 Logos/github-fill.svg
 Logos/github-line.svg
 Logos/gitlab-fill.svg
@@ -1729,6 +1752,8 @@ Logos/tailwind-css-fill.svg
 Logos/tailwind-css-line.svg
 Logos/taobao-fill.svg
 Logos/taobao-line.svg
+Logos/telegram-2-fill.svg
+Logos/telegram-2-line.svg
 Logos/telegram-fill.svg
 Logos/telegram-line.svg
 Logos/threads-fill.svg
@@ -2213,6 +2238,8 @@ Others/bell-fill.svg
 Others/bell-line.svg
 Others/billiards-fill.svg
 Others/billiards-line.svg
+Others/book-shelf-fill.svg
+Others/book-shelf-line.svg
 Others/box-1-fill.svg
 Others/box-1-line.svg
 Others/box-2-fill.svg
@@ -2315,6 +2342,8 @@ Others/shirt-fill.svg
 Others/shirt-line.svg
 Others/sofa-fill.svg
 Others/sofa-line.svg
+Others/stairs-fill.svg
+Others/stairs-line.svg
 Others/sword-fill.svg
 Others/sword-line.svg
 Others/t-shirt-2-fill.svg
@@ -2513,7 +2542,6 @@ System/menu-fill.svg
 System/menu-fold-2-fill.svg
 System/menu-fold-2-line.svg
 System/menu-fold-3-fill.svg
-System/menu-fold-3-line 2.svg
 System/menu-fold-3-line.svg
 System/menu-fold-4-fill.svg
 System/menu-fold-4-line.svg
@@ -2525,10 +2553,8 @@ System/menu-search-line.svg
 System/menu-unfold-2-fill.svg
 System/menu-unfold-2-line.svg
 System/menu-unfold-3-fill.svg
-System/menu-unfold-3-line 2.svg
 System/menu-unfold-3-line.svg
 System/menu-unfold-4-fill.svg
-System/menu-unfold-4-line 2.svg
 System/menu-unfold-4-line.svg
 System/menu-unfold-fill.svg
 System/menu-unfold-line.svg
@@ -2564,6 +2590,10 @@ System/radio-button-fill.svg
 System/radio-button-line.svg
 System/refresh-fill.svg
 System/refresh-line.svg
+System/reset-left-fill.svg
+System/reset-left-line.svg
+System/reset-right-fill.svg
+System/reset-right-line.svg
 System/search-2-fill.svg
 System/search-2-line.svg
 System/search-eye-fill.svg
@@ -2754,6 +2784,8 @@ User & Faces/user-heart-line.svg
 User & Faces/user-line.svg
 User & Faces/user-location-fill.svg
 User & Faces/user-location-line.svg
+User & Faces/user-minus-fill.svg
+User & Faces/user-minus-line.svg
 User & Faces/user-received-2-fill.svg
 User & Faces/user-received-2-line.svg
 User & Faces/user-received-fill.svg
