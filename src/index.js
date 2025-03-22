@@ -1,6 +1,6 @@
 import { shape2path } from "https://cdn.jsdelivr.net/npm/@marmooo/shape2path@0.0.2/+esm";
 import svgpath from "https://cdn.jsdelivr.net/npm/svgpath@2.6.0/+esm";
-import signaturePad from "https://cdn.jsdelivr.net/npm/signature_pad@5.0.4/+esm";
+import signaturePad from "https://cdn.jsdelivr.net/npm/signature_pad@5.0.7/+esm";
 
 document.getElementById("gamePanel")
   .appendChild(document.getElementById("gamePanelTemplate").content);
