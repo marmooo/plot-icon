@@ -61,8 +61,10 @@ amazon.svg
 amd.svg
 android.svg
 android2.svg
+anthropic.svg
 app-indicator.svg
 app.svg
+apple-music.svg
 apple.svg
 archive-fill.svg
 archive.svg
@@ -216,7 +218,10 @@ basket3.svg
 battery-charging.svg
 battery-full.svg
 battery-half.svg
+battery-low.svg
 battery.svg
+beaker-fill.svg
+beaker.svg
 behance.svg
 bell-fill.svg
 bell-slash-fill.svg
@@ -230,6 +235,7 @@ binoculars-fill.svg
 binoculars.svg
 blockquote-left.svg
 blockquote-right.svg
+bluesky.svg
 bluetooth.svg
 body-text.svg
 book-fill.svg
@@ -553,6 +559,7 @@ circle-fill.svg
 circle-half.svg
 circle-square.svg
 circle.svg
+claude.svg
 clipboard-check-fill.svg
 clipboard-check.svg
 clipboard-data-fill.svg
@@ -666,6 +673,7 @@ credit-card.svg
 crop.svg
 crosshair.svg
 crosshair2.svg
+css.svg
 cup-fill.svg
 cup-hot-fill.svg
 cup-hot.svg
@@ -1067,6 +1075,10 @@ fingerprint.svg
 fire.svg
 flag-fill.svg
 flag.svg
+flask-fill.svg
+flask-florence-fill.svg
+flask-florence.svg
+flask.svg
 floppy-fill.svg
 floppy.svg
 floppy2-fill.svg
@@ -1085,6 +1097,7 @@ folder.svg
 folder2-open.svg
 folder2.svg
 fonts.svg
+fork-knife.svg
 forward-fill.svg
 forward.svg
 front.svg
@@ -1115,9 +1128,13 @@ gift.svg
 git.svg
 github.svg
 gitlab.svg
+globe-americas-fill.svg
 globe-americas.svg
+globe-asia-australia-fill.svg
 globe-asia-australia.svg
+globe-central-south-asia-fill.svg
 globe-central-south-asia.svg
+globe-europe-africa-fill.svg
 globe-europe-africa.svg
 globe.svg
 globe2.svg
@@ -1244,6 +1261,7 @@ input-cursor-text.svg
 input-cursor.svg
 instagram.svg
 intersect.svg
+javascript.svg
 journal-album.svg
 journal-arrow-down.svg
 journal-arrow-up.svg
@@ -1290,6 +1308,8 @@ layout-text-window-reverse.svg
 layout-text-window.svg
 layout-three-columns.svg
 layout-wtf.svg
+leaf-fill.svg
+leaf.svg
 life-preserver.svg
 lightbulb-fill.svg
 lightbulb-off-fill.svg
@@ -1332,6 +1352,8 @@ markdown.svg
 marker-tip.svg
 mask.svg
 mastodon.svg
+measuring-cup-fill.svg
+measuring-cup.svg
 medium.svg
 megaphone-fill.svg
 megaphone.svg
@@ -1391,6 +1413,7 @@ nvme.svg
 octagon-fill.svg
 octagon-half.svg
 octagon.svg
+openai.svg
 opencollective.svg
 optical-audio-fill.svg
 optical-audio.svg
@@ -1447,6 +1470,7 @@ pentagon.svg
 people-fill.svg
 people.svg
 percent.svg
+perplexity.svg
 person-add.svg
 person-arms-up.svg
 person-badge-fill.svg
@@ -1934,6 +1958,7 @@ truck-front-fill.svg
 truck-front.svg
 truck.svg
 tsunami.svg
+tux.svg
 tv-fill.svg
 tv.svg
 twitch.svg
@@ -1950,6 +1975,7 @@ type-italic.svg
 type-strikethrough.svg
 type-underline.svg
 type.svg
+typescript.svg
 ubuntu.svg
 ui-checks-grid.svg
 ui-checks.svg
@@ -1964,6 +1990,8 @@ universal-access-circle.svg
 universal-access.svg
 unlock-fill.svg
 unlock.svg
+unlock2-fill.svg
+unlock2.svg
 upc-scan.svg
 upc.svg
 upload.svg

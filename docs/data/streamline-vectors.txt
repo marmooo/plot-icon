@@ -749,7 +749,7 @@ core/line/map-travel/traffic-cone.svg
 core/line/map-travel/triangle-flag.svg
 core/line/map-travel/wheelchair-1.svg
 core/line/map-travel/woman-symbol.svg
-core/line/money-shopping/annoncement-megaphone.svg
+core/line/money-shopping/announcement-megaphone.svg
 core/line/money-shopping/backpack.svg
 core/line/money-shopping/bag-dollar.svg
 core/line/money-shopping/bag-pound.svg

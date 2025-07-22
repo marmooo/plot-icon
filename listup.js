@@ -4,7 +4,6 @@ const dirs = [
   "material-symbols",
   "material-design-icons",
   "phosphor-icons",
-  "tabler-icons",
   "bootstrap-icons",
   "RemixIcon",
   "iconoir",
