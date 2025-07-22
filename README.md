@@ -18,8 +18,6 @@
   [Apache-2.0](https://github.com/marella/material-design-icons/blob/main/LICENSE)
 - [Phosphor Icons](https://github.com/phosphor-icons/core) licensed under the
   [MIT](https://github.com/phosphor-icons/core/blob/main/LICENSE)
-- [Tabler Icons](https://github.com/tabler/tabler-icons) licensed under the
-  [MIT](https://github.com/tabler/tabler-icons/blob/master/LICENSE)
 - [Bootstrap Icons](https://github.com/twbs/icons) licensed under the
   [MIT](https://github.com/twbs/icons/blob/main/LICENSE.md)
 - [Remix Icon](https://github.com/Remix-Design/RemixIcon) licensed under the
