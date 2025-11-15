@@ -3,8 +3,6 @@ import svgpath from "https://cdn.jsdelivr.net/npm/svgpath@2.6.0/+esm";
 import signaturePad from "https://cdn.jsdelivr.net/npm/signature_pad@5.1.1/+esm";
 import { createWorker } from "https://cdn.jsdelivr.net/npm/emoji-particle@0.0.4/+esm";
 
-document.getElementById("gamePanel")
-  .appendChild(document.getElementById("gamePanelTemplate").content);
 const courseNode = document.getElementById("course");
 const emojiParticle = initEmojiParticle();
 const maxParticleCount = 10;
@@ -844,9 +842,8 @@ async function nextProblem() {
   shape2path(svg, createPath, { circleAlgorithm: "QuadBezier" });
   removeUseTags(svg);
 
-  const targets = document.querySelectorAll("#problems .iconContainer");
-  targets[0].replaceChildren(tehon);
-  targets[1].replaceChildren(svg);
+  document.getElementById("tehon").replaceChildren(tehon);
+  document.getElementById("tegaki").replaceChildren(svg);
   removeTransforms(svg);
 
   problem = [];
