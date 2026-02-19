@@ -248,6 +248,8 @@ Business/archive-fill.svg
 Business/archive-line.svg
 Business/archive-stack-fill.svg
 Business/archive-stack-line.svg
+Business/area-chart-fill.svg
+Business/area-chart-line.svg
 Business/at-fill.svg
 Business/at-line.svg
 Business/attachment-fill.svg
@@ -334,6 +336,8 @@ Business/flag-off-fill.svg
 Business/flag-off-line.svg
 Business/global-fill.svg
 Business/global-line.svg
+Business/global-off-fill.svg
+Business/global-off-line.svg
 Business/honour-fill.svg
 Business/honour-line.svg
 Business/id-card-fill.svg
@@ -384,6 +388,8 @@ Business/medal-2-fill.svg
 Business/medal-2-line.svg
 Business/medal-fill.svg
 Business/medal-line.svg
+Business/megaphone-2-fill.svg
+Business/megaphone-2-line.svg
 Business/megaphone-fill.svg
 Business/megaphone-line.svg
 Business/pass-expired-fill.svg
@@ -418,6 +424,8 @@ Business/reply-all-fill.svg
 Business/reply-all-line.svg
 Business/reply-fill.svg
 Business/reply-line.svg
+Business/send-ins-fill.svg
+Business/send-ins-line.svg
 Business/send-plane-2-fill.svg
 Business/send-plane-2-line.svg
 Business/send-plane-fill.svg
@@ -438,6 +446,8 @@ Business/slideshow-fill.svg
 Business/slideshow-line.svg
 Business/stack-fill.svg
 Business/stack-line.svg
+Business/stacked-chart-fill.svg
+Business/stacked-chart-line.svg
 Business/trademark-fill.svg
 Business/trademark-line.svg
 Business/triangular-flag-fill.svg
@@ -456,6 +466,12 @@ Communication/chat-3-fill.svg
 Communication/chat-3-line.svg
 Communication/chat-4-fill.svg
 Communication/chat-4-line.svg
+Communication/chat-ai-2-fill.svg
+Communication/chat-ai-2-line.svg
+Communication/chat-ai-3-fill.svg
+Communication/chat-ai-3-line.svg
+Communication/chat-ai-4-fill.svg
+Communication/chat-ai-4-line.svg
 Communication/chat-ai-fill.svg
 Communication/chat-ai-line.svg
 Communication/chat-check-fill.svg
@@ -490,6 +506,8 @@ Communication/chat-smile-2-fill.svg
 Communication/chat-smile-2-line.svg
 Communication/chat-smile-3-fill.svg
 Communication/chat-smile-3-line.svg
+Communication/chat-smile-ai-3-fill.svg
+Communication/chat-smile-ai-3-line.svg
 Communication/chat-smile-ai-fill.svg
 Communication/chat-smile-ai-line.svg
 Communication/chat-smile-fill.svg
@@ -514,6 +532,8 @@ Communication/message-2-fill.svg
 Communication/message-2-line.svg
 Communication/message-3-fill.svg
 Communication/message-3-line.svg
+Communication/message-ai-3-fill.svg
+Communication/message-ai-3-line.svg
 Communication/message-fill.svg
 Communication/message-line.svg
 Communication/question-answer-fill.svg
@@ -524,8 +544,14 @@ Communication/speak-ai-fill.svg
 Communication/speak-ai-line.svg
 Communication/speak-fill.svg
 Communication/speak-line.svg
+Communication/speech-to-text-fill.svg
+Communication/speech-to-text-line.svg
+Communication/text-to-speech-fill.svg
+Communication/text-to-speech-line.svg
 Communication/video-chat-fill.svg
 Communication/video-chat-line.svg
+Design/ai-generate-2-fill.svg
+Design/ai-generate-2-line.svg
 Design/align-item-bottom-fill.svg
 Design/align-item-bottom-line.svg
 Design/align-item-horizontal-center-fill.svg
@@ -556,6 +582,8 @@ Design/brush-3-fill.svg
 Design/brush-3-line.svg
 Design/brush-4-fill.svg
 Design/brush-4-line.svg
+Design/brush-ai-3-fill.svg
+Design/brush-ai-3-line.svg
 Design/brush-ai-fill.svg
 Design/brush-ai-line.svg
 Design/brush-fill.svg
@@ -594,6 +622,8 @@ Design/crosshair-fill.svg
 Design/crosshair-line.svg
 Design/drag-drop-fill.svg
 Design/drag-drop-line.svg
+Design/draw-fill.svg
+Design/draw-line.svg
 Design/drop-fill.svg
 Design/drop-line.svg
 Design/edit-2-fill.svg
@@ -678,18 +708,28 @@ Design/mark-pen-fill.svg
 Design/mark-pen-line.svg
 Design/markup-fill.svg
 Design/markup-line.svg
+Design/mosaic-fill.svg
+Design/mosaic-line.svg
 Design/octagon-fill.svg
 Design/octagon-line.svg
 Design/paint-brush-fill.svg
 Design/paint-brush-line.svg
 Design/paint-fill.svg
 Design/paint-line.svg
+Design/painting-ai-fill.svg
+Design/painting-ai-line.svg
+Design/painting-fill.svg
+Design/painting-line.svg
 Design/palette-fill.svg
 Design/palette-line.svg
 Design/pantone-fill.svg
 Design/pantone-line.svg
 Design/pen-nib-fill.svg
 Design/pen-nib-line.svg
+Design/pencil-ai-2-fill.svg
+Design/pencil-ai-2-line.svg
+Design/pencil-ai-fill.svg
+Design/pencil-ai-line.svg
 Design/pencil-fill.svg
 Design/pencil-line.svg
 Design/pencil-ruler-2-fill.svg
@@ -704,6 +744,8 @@ Design/quill-pen-fill.svg
 Design/quill-pen-line.svg
 Design/rectangle-fill.svg
 Design/rectangle-line.svg
+Design/remix-fill.svg
+Design/remix-line.svg
 Design/ruler-2-fill.svg
 Design/ruler-2-line.svg
 Design/ruler-fill.svg
@@ -742,6 +784,8 @@ Design/tools-fill.svg
 Design/tools-line.svg
 Design/triangle-fill.svg
 Design/triangle-line.svg
+Design/wrench-fill.svg
+Design/wrench-line.svg
 Development/braces-fill.svg
 Development/braces-line.svg
 Development/brackets-fill.svg
@@ -788,6 +832,10 @@ Development/git-repository-private-fill.svg
 Development/git-repository-private-line.svg
 Development/html5-fill.svg
 Development/html5-line.svg
+Development/issues-fill.svg
+Development/issues-line.svg
+Development/issues-reopen-fill.svg
+Development/issues-reopen-line.svg
 Development/javascript-fill.svg
 Development/javascript-line.svg
 Development/parentheses-fill.svg
@@ -836,6 +884,8 @@ Device/cellphone-fill.svg
 Device/cellphone-line.svg
 Device/computer-fill.svg
 Device/computer-line.svg
+Device/connector-fill.svg
+Device/connector-line.svg
 Device/cpu-fill.svg
 Device/cpu-line.svg
 Device/dashboard-2-fill.svg
@@ -888,6 +938,12 @@ Device/mobile-download-fill.svg
 Device/mobile-download-line.svg
 Device/mouse-fill.svg
 Device/mouse-line.svg
+Device/network-error-fill.svg
+Device/network-error-line.svg
+Device/network-fill.svg
+Device/network-line.svg
+Device/network-off-fill.svg
+Device/network-off-line.svg
 Device/phone-fill.svg
 Device/phone-find-fill.svg
 Device/phone-find-line.svg
@@ -898,6 +954,8 @@ Device/qr-code-fill.svg
 Device/qr-code-line.svg
 Device/qr-scan-2-fill.svg
 Device/qr-scan-2-line.svg
+Device/qr-scan-ai-fill.svg
+Device/qr-scan-ai-line.svg
 Device/qr-scan-fill.svg
 Device/qr-scan-line.svg
 Device/radar-fill.svg
@@ -940,6 +998,14 @@ Device/server-fill.svg
 Device/server-line.svg
 Device/shut-down-fill.svg
 Device/shut-down-line.svg
+Device/signal-cellular-1-fill.svg
+Device/signal-cellular-1-line.svg
+Device/signal-cellular-2-fill.svg
+Device/signal-cellular-2-line.svg
+Device/signal-cellular-3-fill.svg
+Device/signal-cellular-3-line.svg
+Device/signal-cellular-off-fill.svg
+Device/signal-cellular-off-line.svg
 Device/signal-wifi-1-fill.svg
 Device/signal-wifi-1-line.svg
 Device/signal-wifi-2-fill.svg
@@ -956,6 +1022,8 @@ Device/sim-card-2-fill.svg
 Device/sim-card-2-line.svg
 Device/sim-card-fill.svg
 Device/sim-card-line.svg
+Device/sim-card-warning-fill.svg
+Device/sim-card-warning-line.svg
 Device/smartphone-fill.svg
 Device/smartphone-line.svg
 Device/tablet-fill.svg
@@ -984,6 +1052,8 @@ Document/book-2-fill.svg
 Document/book-2-line.svg
 Document/book-3-fill.svg
 Document/book-3-line.svg
+Document/book-ai-fill.svg
+Document/book-ai-line.svg
 Document/book-fill.svg
 Document/book-line.svg
 Document/book-marked-fill.svg
@@ -994,6 +1064,10 @@ Document/book-read-fill.svg
 Document/book-read-line.svg
 Document/booklet-fill.svg
 Document/booklet-line.svg
+Document/certificate-2-fill.svg
+Document/certificate-2-line.svg
+Document/certificate-fill.svg
+Document/certificate-line.svg
 Document/clipboard-fill.svg
 Document/clipboard-line.svg
 Document/contacts-book-2-fill.svg
@@ -1016,6 +1090,10 @@ Document/file-4-fill.svg
 Document/file-4-line.svg
 Document/file-add-fill.svg
 Document/file-add-line.svg
+Document/file-ai-2-fill.svg
+Document/file-ai-2-line.svg
+Document/file-ai-fill.svg
+Document/file-ai-line.svg
 Document/file-chart-2-fill.svg
 Document/file-chart-2-line.svg
 Document/file-chart-fill.svg
@@ -1082,6 +1160,8 @@ Document/file-ppt-fill.svg
 Document/file-ppt-line.svg
 Document/file-reduce-fill.svg
 Document/file-reduce-line.svg
+Document/file-scan-fill.svg
+Document/file-scan-line.svg
 Document/file-search-fill.svg
 Document/file-search-line.svg
 Document/file-settings-fill.svg
@@ -1212,6 +1292,7 @@ Editor/a-b.svg
 Editor/ai-generate-2.svg
 Editor/ai-generate-text.svg
 Editor/ai-generate.svg
+Editor/ai.svg
 Editor/align-bottom.svg
 Editor/align-center.svg
 Editor/align-justify.svg
@@ -1228,6 +1309,7 @@ Editor/calendar-view.svg
 Editor/carousel-view.svg
 Editor/code-block.svg
 Editor/code-view.svg
+Editor/cursor-hand.svg
 Editor/custom-size.svg
 Editor/delete-column.svg
 Editor/delete-row.svg
@@ -1244,7 +1326,7 @@ Editor/font-color.svg
 Editor/font-family.svg
 Editor/font-mono.svg
 Editor/font-sans-serif.svg
-Editor/font-sans.svg
+Editor/font-serif.svg
 Editor/font-size-2.svg
 Editor/font-size-ai.svg
 Editor/font-size.svg
@@ -1259,6 +1341,7 @@ Editor/h-3.svg
 Editor/h-4.svg
 Editor/h-5.svg
 Editor/h-6.svg
+Editor/hand-2.svg
 Editor/hand.svg
 Editor/hashtag.svg
 Editor/heading.svg
@@ -1540,6 +1623,8 @@ Food/cake-3-fill.svg
 Food/cake-3-line.svg
 Food/cake-fill.svg
 Food/cake-line.svg
+Food/cookie-fill.svg
+Food/cookie-line.svg
 Food/cup-fill.svg
 Food/cup-line.svg
 Food/drinks-2-fill.svg
@@ -1548,6 +1633,8 @@ Food/drinks-fill.svg
 Food/drinks-line.svg
 Food/goblet-2-fill.svg
 Food/goblet-2-line.svg
+Food/goblet-broken-fill.svg
+Food/goblet-broken-line.svg
 Food/goblet-fill.svg
 Food/goblet-line.svg
 Food/knife-blood-fill.svg
@@ -1558,12 +1645,70 @@ Food/restaurant-2-fill.svg
 Food/restaurant-2-line.svg
 Food/restaurant-fill.svg
 Food/restaurant-line.svg
+Game & Sports/baseball-fill.svg
+Game & Sports/baseball-line.svg
+Game & Sports/basketball-fill.svg
+Game & Sports/basketball-line.svg
+Game & Sports/billiards-fill.svg
+Game & Sports/billiards-line.svg
+Game & Sports/boxing-fill.svg
+Game & Sports/boxing-line.svg
+Game & Sports/chess-fill.svg
+Game & Sports/chess-line.svg
+Game & Sports/dice-1-fill.svg
+Game & Sports/dice-1-line.svg
+Game & Sports/dice-2-fill.svg
+Game & Sports/dice-2-line.svg
+Game & Sports/dice-3-fill.svg
+Game & Sports/dice-3-line.svg
+Game & Sports/dice-4-fill.svg
+Game & Sports/dice-4-line.svg
+Game & Sports/dice-5-fill.svg
+Game & Sports/dice-5-line.svg
+Game & Sports/dice-6-fill.svg
+Game & Sports/dice-6-line.svg
+Game & Sports/dice-fill.svg
+Game & Sports/dice-line.svg
+Game & Sports/football-fill.svg
+Game & Sports/football-line.svg
+Game & Sports/game-2-fill.svg
+Game & Sports/game-2-line.svg
+Game & Sports/game-fill.svg
+Game & Sports/game-line.svg
+Game & Sports/golf-ball-fill.svg
+Game & Sports/golf-ball-line.svg
+Game & Sports/piano-fill.svg
+Game & Sports/piano-grand-fill.svg
+Game & Sports/piano-grand-line.svg
+Game & Sports/piano-line.svg
+Game & Sports/ping-pong-fill.svg
+Game & Sports/ping-pong-line.svg
+Game & Sports/poker-clubs-fill.svg
+Game & Sports/poker-clubs-line.svg
+Game & Sports/poker-diamonds-fill.svg
+Game & Sports/poker-diamonds-line.svg
+Game & Sports/poker-hearts-fill.svg
+Game & Sports/poker-hearts-line.svg
+Game & Sports/poker-spades-fill.svg
+Game & Sports/poker-spades-line.svg
+Game & Sports/sword-fill.svg
+Game & Sports/sword-line.svg
+Game & Sports/target-fill.svg
+Game & Sports/target-line.svg
 Health & Medical/aed-electrodes-fill.svg
 Health & Medical/aed-electrodes-line.svg
 Health & Medical/aed-fill.svg
 Health & Medical/aed-line.svg
+Health & Medical/atom-fill.svg
+Health & Medical/atom-line.svg
 Health & Medical/brain-2-fill.svg
 Health & Medical/brain-2-line.svg
+Health & Medical/brain-3-fill.svg
+Health & Medical/brain-3-line.svg
+Health & Medical/brain-4-fill.svg
+Health & Medical/brain-4-line.svg
+Health & Medical/brain-ai-3-fill.svg
+Health & Medical/brain-ai-3-line.svg
 Health & Medical/brain-fill.svg
 Health & Medical/brain-line.svg
 Health & Medical/capsule-fill.svg
@@ -1678,6 +1823,10 @@ Logos/copilot-fill.svg
 Logos/copilot-line.svg
 Logos/coreos-fill.svg
 Logos/coreos-line.svg
+Logos/cursor-ai-fill.svg
+Logos/cursor-ai-line.svg
+Logos/deepseek-fill.svg
+Logos/deepseek-line.svg
 Logos/dingding-fill.svg
 Logos/dingding-line.svg
 Logos/discord-fill.svg
@@ -1716,6 +1865,8 @@ Logos/firefox-browser-fill.svg
 Logos/firefox-browser-line.svg
 Logos/firefox-fill.svg
 Logos/firefox-line.svg
+Logos/fiverr-fill.svg
+Logos/fiverr-line.svg
 Logos/flickr-fill.svg
 Logos/flickr-line.svg
 Logos/flutter-fill.svg
@@ -1726,6 +1877,10 @@ Logos/gatsby-fill.svg
 Logos/gatsby-line.svg
 Logos/gemini-fill.svg
 Logos/gemini-line.svg
+Logos/gitbook-fill.svg
+Logos/gitbook-line.svg
+Logos/gitee-fill.svg
+Logos/gitee-line.svg
 Logos/github-fill.svg
 Logos/github-line.svg
 Logos/gitlab-fill.svg
@@ -1734,6 +1889,8 @@ Logos/google-fill.svg
 Logos/google-line.svg
 Logos/google-play-fill.svg
 Logos/google-play-line.svg
+Logos/grok-ai-fill.svg
+Logos/grok-ai-line.svg
 Logos/honor-of-kings-fill.svg
 Logos/honor-of-kings-line.svg
 Logos/ie-fill.svg
@@ -1764,6 +1921,8 @@ Logos/messenger-fill.svg
 Logos/messenger-line.svg
 Logos/meta-fill.svg
 Logos/meta-line.svg
+Logos/microsoft-copilot-fill.svg
+Logos/microsoft-copilot-line.svg
 Logos/microsoft-fill.svg
 Logos/microsoft-line.svg
 Logos/microsoft-loop-fill.svg
@@ -1810,8 +1969,12 @@ Logos/product-hunt-fill.svg
 Logos/product-hunt-line.svg
 Logos/qq-fill.svg
 Logos/qq-line.svg
+Logos/qwen-ai-fill.svg
+Logos/qwen-ai-line.svg
 Logos/reactjs-fill.svg
 Logos/reactjs-line.svg
+Logos/reddit-2-fill.svg
+Logos/reddit-2-line.svg
 Logos/reddit-fill.svg
 Logos/reddit-line.svg
 Logos/remix-run-fill.svg
@@ -1838,6 +2001,8 @@ Logos/stackshare-fill.svg
 Logos/stackshare-line.svg
 Logos/steam-fill.svg
 Logos/steam-line.svg
+Logos/subreddit-fill.svg
+Logos/subreddit-line.svg
 Logos/supabase-fill.svg
 Logos/supabase-line.svg
 Logos/svelte-fill.svg
@@ -1870,6 +2035,8 @@ Logos/ubuntu-fill.svg
 Logos/ubuntu-line.svg
 Logos/unsplash-fill.svg
 Logos/unsplash-line.svg
+Logos/upwork-fill.svg
+Logos/upwork-line.svg
 Logos/vercel-fill.svg
 Logos/vercel-line.svg
 Logos/vimeo-fill.svg
@@ -1910,6 +2077,8 @@ Logos/zcool-fill.svg
 Logos/zcool-line.svg
 Logos/zhihu-fill.svg
 Logos/zhihu-line.svg
+Logos/zhipu-ai-fill.svg
+Logos/zhipu-ai-line.svg
 Map/anchor-fill.svg
 Map/anchor-line.svg
 Map/barricade-fill.svg
@@ -2042,6 +2211,8 @@ Map/signal-tower-fill.svg
 Map/signal-tower-line.svg
 Map/signpost-fill.svg
 Map/signpost-line.svg
+Map/space-ship-2-fill.svg
+Map/space-ship-2-line.svg
 Map/space-ship-fill.svg
 Map/space-ship-line.svg
 Map/steering-2-fill.svg
@@ -2092,6 +2263,10 @@ Media/camera-2-fill.svg
 Media/camera-2-line.svg
 Media/camera-3-fill.svg
 Media/camera-3-line.svg
+Media/camera-4-fill.svg
+Media/camera-4-line.svg
+Media/camera-ai-2-fill.svg
+Media/camera-ai-2-line.svg
 Media/camera-ai-fill.svg
 Media/camera-ai-line.svg
 Media/camera-fill.svg
@@ -2168,10 +2343,14 @@ Media/image-circle-ai-fill.svg
 Media/image-circle-ai-line.svg
 Media/image-circle-fill.svg
 Media/image-circle-line.svg
+Media/image-download-fill.svg
+Media/image-download-line.svg
 Media/image-edit-fill.svg
 Media/image-edit-line.svg
 Media/image-fill.svg
 Media/image-line.svg
+Media/image-upload-fill.svg
+Media/image-upload-line.svg
 Media/landscape-ai-fill.svg
 Media/landscape-ai-line.svg
 Media/landscape-fill.svg
@@ -2370,14 +2549,14 @@ Media/webcam-fill.svg
 Media/webcam-line.svg
 Others/accessibility-fill.svg
 Others/accessibility-line.svg
+Others/ai-generate-3d-fill.svg
+Others/ai-generate-3d-line.svg
 Others/armchair-fill.svg
 Others/armchair-line.svg
-Others/basketball-fill.svg
-Others/basketball-line.svg
 Others/bell-fill.svg
 Others/bell-line.svg
-Others/billiards-fill.svg
-Others/billiards-line.svg
+Others/binoculars-fill.svg
+Others/binoculars-line.svg
 Others/book-shelf-fill.svg
 Others/book-shelf-line.svg
 Others/box-1-fill.svg
@@ -2386,32 +2565,14 @@ Others/box-2-fill.svg
 Others/box-2-line.svg
 Others/box-3-fill.svg
 Others/box-3-line.svg
-Others/boxing-fill.svg
-Others/boxing-line.svg
 Others/cactus-fill.svg
 Others/cactus-line.svg
 Others/candle-fill.svg
 Others/candle-line.svg
 Others/character-recognition-fill.svg
 Others/character-recognition-line.svg
-Others/chess-fill.svg
-Others/chess-line.svg
 Others/cross-fill.svg
 Others/cross-line.svg
-Others/dice-1-fill.svg
-Others/dice-1-line.svg
-Others/dice-2-fill.svg
-Others/dice-2-line.svg
-Others/dice-3-fill.svg
-Others/dice-3-line.svg
-Others/dice-4-fill.svg
-Others/dice-4-line.svg
-Others/dice-5-fill.svg
-Others/dice-5-line.svg
-Others/dice-6-fill.svg
-Others/dice-6-line.svg
-Others/dice-fill.svg
-Others/dice-line.svg
 Others/door-closed-fill.svg
 Others/door-closed-line.svg
 Others/door-fill.svg
@@ -2424,20 +2585,14 @@ Others/door-open-fill.svg
 Others/door-open-line.svg
 Others/flower-fill.svg
 Others/flower-line.svg
-Others/football-fill.svg
-Others/football-line.svg
 Others/fridge-fill.svg
 Others/fridge-line.svg
-Others/game-fill.svg
-Others/game-line.svg
 Others/glasses-2-fill.svg
 Others/glasses-2-line.svg
 Others/glasses-fill.svg
 Others/glasses-line.svg
 Others/goggles-fill.svg
 Others/goggles-line.svg
-Others/golf-ball-fill.svg
-Others/golf-ball-line.svg
 Others/graduation-cap-fill.svg
 Others/graduation-cap-line.svg
 Others/handbag-fill.svg
@@ -2450,6 +2605,8 @@ Others/key-fill.svg
 Others/key-line.svg
 Others/leaf-fill.svg
 Others/leaf-line.svg
+Others/lightbulb-ai-fill.svg
+Others/lightbulb-ai-line.svg
 Others/lightbulb-fill.svg
 Others/lightbulb-flash-fill.svg
 Others/lightbulb-flash-line.svg
@@ -2458,22 +2615,14 @@ Others/outlet-2-fill.svg
 Others/outlet-2-line.svg
 Others/outlet-fill.svg
 Others/outlet-line.svg
-Others/ping-pong-fill.svg
-Others/ping-pong-line.svg
 Others/plant-fill.svg
 Others/plant-line.svg
 Others/plug-2-fill.svg
 Others/plug-2-line.svg
+Others/plug-3-fill.svg
+Others/plug-3-line.svg
 Others/plug-fill.svg
 Others/plug-line.svg
-Others/poker-clubs-fill.svg
-Others/poker-clubs-line.svg
-Others/poker-diamonds-fill.svg
-Others/poker-diamonds-line.svg
-Others/poker-hearts-fill.svg
-Others/poker-hearts-line.svg
-Others/poker-spades-fill.svg
-Others/poker-spades-line.svg
 Others/police-badge-fill.svg
 Others/police-badge-line.svg
 Others/recycle-fill.svg
@@ -2496,8 +2645,6 @@ Others/sofa-fill.svg
 Others/sofa-line.svg
 Others/stairs-fill.svg
 Others/stairs-line.svg
-Others/sword-fill.svg
-Others/sword-line.svg
 Others/t-shirt-2-fill.svg
 Others/t-shirt-2-line.svg
 Others/t-shirt-air-fill.svg
@@ -2540,6 +2687,8 @@ System/apps-2-ai-fill.svg
 System/apps-2-ai-line.svg
 System/apps-2-fill.svg
 System/apps-2-line.svg
+System/apps-ai-fill.svg
+System/apps-ai-line.svg
 System/apps-fill.svg
 System/apps-line.svg
 System/check-double-fill.svg
@@ -2630,6 +2779,8 @@ System/forbid-fill.svg
 System/forbid-line.svg
 System/function-add-fill.svg
 System/function-add-line.svg
+System/function-ai-fill.svg
+System/function-ai-line.svg
 System/function-fill.svg
 System/function-line.svg
 System/history-fill.svg
@@ -2682,8 +2833,12 @@ System/logout-circle-fill.svg
 System/logout-circle-line.svg
 System/logout-circle-r-fill.svg
 System/logout-circle-r-line.svg
+System/loop-left-ai-fill.svg
+System/loop-left-ai-line.svg
 System/loop-left-fill.svg
 System/loop-left-line.svg
+System/loop-right-ai-fill.svg
+System/loop-right-ai-line.svg
 System/loop-right-fill.svg
 System/loop-right-line.svg
 System/menu-2-fill.svg
@@ -2754,6 +2909,14 @@ System/reset-right-fill.svg
 System/reset-right-line.svg
 System/search-2-fill.svg
 System/search-2-line.svg
+System/search-ai-2-fill.svg
+System/search-ai-2-line.svg
+System/search-ai-3-fill.svg
+System/search-ai-3-line.svg
+System/search-ai-4-fill.svg
+System/search-ai-4-line.svg
+System/search-ai-fill.svg
+System/search-ai-line.svg
 System/search-eye-fill.svg
 System/search-eye-line.svg
 System/search-fill.svg
@@ -2862,6 +3025,8 @@ User & Faces/account-pin-circle-fill.svg
 User & Faces/account-pin-circle-line.svg
 User & Faces/admin-fill.svg
 User & Faces/admin-line.svg
+User & Faces/ai-agent-fill.svg
+User & Faces/ai-agent-line.svg
 User & Faces/aliens-fill.svg
 User & Faces/aliens-line.svg
 User & Faces/bear-smile-fill.svg
@@ -2874,6 +3039,8 @@ User & Faces/criminal-fill.svg
 User & Faces/criminal-line.svg
 User & Faces/emotion-2-fill.svg
 User & Faces/emotion-2-line.svg
+User & Faces/emotion-add-fill.svg
+User & Faces/emotion-add-line.svg
 User & Faces/emotion-fill.svg
 User & Faces/emotion-happy-fill.svg
 User & Faces/emotion-happy-line.svg
@@ -2890,6 +3057,10 @@ User & Faces/genderless-fill.svg
 User & Faces/genderless-line.svg
 User & Faces/ghost-2-fill.svg
 User & Faces/ghost-2-line.svg
+User & Faces/ghost-3-fill.svg
+User & Faces/ghost-3-line.svg
+User & Faces/ghost-4-fill.svg
+User & Faces/ghost-4-line.svg
 User & Faces/ghost-fill.svg
 User & Faces/ghost-line.svg
 User & Faces/ghost-smile-fill.svg
