@@ -6,7 +6,7 @@
 
 1. `gitn clone vendor/ repos.lst` (see [gitn](https://github.com/marmooo/gitn))
 2. `bash build-svg.sh`
-3. `deno run --allow-read --allow-write listup.js`
+3. `deno run -RW listup.js`
 
 ## Attribution
 
